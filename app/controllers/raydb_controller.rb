@@ -7,6 +7,7 @@ class RaydbController < ApplicationController
     # GET /raydb/show/:id
     def show
         @raydb = Raydb.find(params[:id])
+        @page_title = @raydb.name
     end
     
     # GET /raydb/new

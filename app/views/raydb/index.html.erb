@@ -1,18 +1,112 @@
 
 <h1>Ray Events List</h1>
 
+<link rel="stylesheet" type="text/css" href="mystyle.css">
 
-<ul>
-<% @raydb.each do |e| %>
+<style>
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
 
-    <li>
-        <%= e.name %>
-        <%= link_to "Show", :controller => "raydb", :action=>"show", :id => e %>
-        <%= link_to "Edit", :controller => "raydb", :action=>"edit", :id => e %>
-        <%= link_to "Delete", :controller => "raydb", :action=>"destroy", :id => e %>
-    </li>
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+#container{
+    border:1px solid;
+    width:1000px;
+    height:600px;
+    position: relative;
+
+}
+
+#boxclass{
+    text-align: bottom;
+    position: absolute;
+    bottom:120px;
+}
+
+.box {
+    border: 1px solid;
+    margin-left:30px;
+    display:inline-block;
+    vertical-align:text-bottom;
+}
+
+.inner{
+    margin-top: 60px;
+    text-align:center;
+} 
+
+</style>
+
+<body>
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Weight</th>
+            <th>Height</th>
+            <th>Color</th>
+            <th>Actions</th>
+            <th>-</th>
+            <th>-</th>
+        </tr>
+    </thead>
+    <tbody>
+        
+    <% @raydb.each do |e| %>
+        <tr>
     
-<% end %>
-</ul>
+            <td><%= e.name %></td>
+            <td><%= e.weight %></td>
+            <td><%= e.height %></td>
+            <td><%= e.color %></td>
+            <td><%= link_to "Show", :controller => "raydb", :action=>"show", :id => e %></td>
+            <td><%= link_to "Edit", :controller => "raydb", :action=>"edit", :id => e %></td>
+            <td><%= link_to "Delete", :controller => "raydb", :action=>"destroy", :id => e %></td>
+        
+        </tr>
+    <% end %>
+    
+    </tbody>
+
+</table>
 
 <%= link_to "New Event", :controller => 'raydb', :action => 'new' %>
+</br></br>
+
+
+<div id="container">
+    </br></br></br></br></br></br></br></br>
+    
+    <div id="boxclass">
+    <% @raydb.each do |e| %>
+    
+    <div class="box"  style = "width:<%= e.weight%>px; height:<%= e.height %>px">
+        <div class="inner">
+        <div class="name" style = "color:<%= e.color%>";><%= e.name %></div>
+        <div class="gpa"><%= e.gpa %></div>
+        </div>
+    </div>
+     <% end %>
+     </div>
+     
+</div>
+
+<script>
+    document.getElementsByClassName("box").style.color = "blue";
+</script>
+
+
+
+</body>

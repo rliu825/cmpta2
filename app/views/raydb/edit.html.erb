@@ -1,19 +1,19 @@
 <%= form_for @raydb, :url => { :controller => 'raydb', :action => 'update', :id =>@raydb} do |f| %>
 
-    <%= f.label :name, "Name" %>
-    <%= f.text_field :name %>
+    <%= f.label :name, "Name:" %></br>
+    <%= f.text_field :name %></br></br>
     
-    <%= f.label :weight, "Weight"%>
-    <%= f.text_area :weight %>
+    <%= f.label :weight, "Weight:"%></br>
+    <%= f.text_field :weight %></br></br>
         
-    <%= f.label :height, "Height"%>
-    <%= f.text_area :height %>
+    <%= f.label :height, "Height:"%></br>
+    <%= f.text_field :height %></br></br>
 
-    <%= f.label :color, "Color"%>
-    <%= f.text_area :color %>
+    <%= f.label :color, "Color:"%></br>
+    <%= f.text_field :color %></br></br>
     
-    <%= f.label :gpa, "Gpa"%>
-    <%= f.text_area :gpa %>
+    <%= f.label :gpa, "Gpa:"%></br>
+    <%= f.text_field :gpa %></br></br>
     
     
     <%= f.submit "Finish Editing" %>
