@@ -1,0 +1,21 @@
+<%= form_for @raydb, :url => { :controller => 'raydb', :action => 'create'} do |f| %>
+
+    <%= f.label :name, "Name" %>
+    <%= f.text_field :name %>
+    
+    <%= f.label :weight, "Weight"%>
+    <%= f.text_area :weight %>
+        
+    <%= f.label :height, "Height"%>
+    <%= f.text_area :height %>
+
+    <%= f.label :color, "Color"%>
+    <%= f.text_area :color %>
+    
+    <%= f.label :gpa, "Gpa"%>
+    <%= f.text_area :gpa %>
+    
+    
+    <%= f.submit "Create" %>
+    
+<% end %>
