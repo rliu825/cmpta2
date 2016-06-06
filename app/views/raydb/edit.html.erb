@@ -1,5 +1,15 @@
 <%= form_for @raydb, :url => { :controller => 'raydb', :action => 'update', :id =>@raydb} do |f| %>
 
+<% if @raydb.errors.any? %>
+      <ul>
+      <% @raydb.errors.full_messages.each do |msg| %>
+        <li style="color:red;"><%= msg %></li>
+      <% end %>
+      </ul>
+<% end %>
+
+
+<h2>Please enter valid name and enter "Male" or "Female" for gender in order to show graph properly.</h2>
     <%= f.label :name, "Name:" %></br>
     <%= f.text_field :name %></br></br>
     
@@ -14,7 +24,12 @@
     
     <%= f.label :gpa, "Gpa:"%></br>
     <%= f.text_field :gpa %></br></br>
+   
+    <%= f.label :age, "Age:"%></br>
+    <%= f.text_field :age %></br></br> 
     
+    <%= f.label :gender, "Gender:"%></br>
+    <%= f.text_field :gender %></br></br> 
     
     <%= f.submit "Finish Editing" %>
     

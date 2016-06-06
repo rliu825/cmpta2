@@ -23,27 +23,34 @@ class RaydbController < ApplicationController
     def update
         @raydb = Raydb.find (params[:id])
         
-        @raydb.update(raydb_params)
-        
-        redirect_to :action => :show, :id => @raydb
+        if @raydb.update(raydb_params)
+            flash[:notice] = "Successfully updated"
+            redirect_to :action => :show, :id => @raydb
+        else
+            render :action => :edit
+        end
     end
     # POST /raydb/create
     def create
        @raydb = Raydb.new(raydb_params)
        
-       @raydb.save
-       
-       redirect_to :action => :index  #Tell browser to change to index
+        if @raydb.save
+            flash[:notice] = "Successfully Added"
+            redirect_to :action => :index  #Tell browser to change to index
+        else
+            render :action => :new
+        end
     end
     
     #GET /raydb/destroy/ :id
     def destroy
         @raydb =Raydb.find (params[:id])
         @raydb.destroy
+        flash[:alert] = "Successfully deleted"
         redirect_to :action => :index
     end 
     private
     def raydb_params
-        params.require(:raydb).permit(:name, :weight, :height, :color, :gpa)
+        params.require(:raydb).permit(:name, :weight, :height, :color, :gpa, :age, :gender)
     end    
 end
