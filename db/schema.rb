@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160604065514) do
+ActiveRecord::Schema.define(version: 20160605234049) do
 
   create_table "raydbs", force: :cascade do |t|
     t.string   "name"
@@ -21,6 +21,8 @@ ActiveRecord::Schema.define(version: 20160604065514) do
     t.float    "gpa"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "age"
+    t.string   "gender"
   end
 
 end

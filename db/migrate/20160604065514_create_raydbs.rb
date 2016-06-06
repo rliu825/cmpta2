@@ -6,7 +6,7 @@ class CreateRaydbs < ActiveRecord::Migration
       t.integer :height
       t.string :color
       t.float :gpa
-
+      
       t.timestamps null: false
     end
   end
