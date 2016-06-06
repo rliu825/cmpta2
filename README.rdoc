@@ -1,28 +1,14 @@
-== README
+The table has the CRUD structure and is able to add, show edit, delete.
+The graph chart below will change dynamically based on the value of the table. 
+Every person's data saved in the table will be accessed and interpreted to show according in the graph below.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Each column contains the person's name(with its color), gpa and age.
+More imprtantly, if its a female, the column will be a round-cornered box rather than a rectangle.
+The height of each graph states the height of the person, the width of each graph states the weight of each person.
 
-Things you may want to cover:
+When editing each student, or creating new student, if the value of Name or Gender is left empty, then message will pop up and warn the user of the errors
+When successfully add,edit or delete a person, a green-colored message will pop up too.
 
-* Ruby version
+Note: Due to time limit, Assume that the user is reasonable when entering the value of each attribute.
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Creativity is shown through the pop-up messages, the female/male differentiation, the validation of name and gender, and the design of the table.
